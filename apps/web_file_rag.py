@@ -110,12 +110,13 @@ if st.session_state.vectorstore is not None:
                 with st.spinner("Generating answer..."):
                     retriever = st.session_state.vectorstore.as_retriever()
                     docs = retriever.invoke(question)
-                    
+                    formatted_context = "\n\n".join(doc.page_content for doc in docs)
+
                     response = chain.invoke({
                         "question": question,
-                        "context": docs
+                        "context": formatted_context
                     })
-                    
+
                     st.session_state.last_response = response.content
                     st.session_state.last_context = docs
             else:
