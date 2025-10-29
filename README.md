@@ -14,7 +14,6 @@ The system retrieves the most relevant text chunks from the source and uses GPT-
 - ⚙️ Generate embeddings using Hugging Face’s `all-MiniLM-L6-v2` model  
 - 🧠 Use GPT-4 via LangChain to answer user questions  
 - 💬 View retrieved document context for transparency  
-- 🔒 Secure API key management via Streamlit Secrets (no `.env` file needed on deployment)
 
 ---
 
@@ -24,7 +23,6 @@ The system retrieves the most relevant text chunks from the source and uses GPT-
 - **Language Model:** OpenAI GPT-4 via [LangChain](https://python.langchain.com)  
 - **Embeddings:** Hugging Face Sentence Transformers  
 - **Vector Storage:** In-memory FAISS (via LangChain)  
-- **Environment Variables:** `python-dotenv` (local) / Streamlit Secrets (cloud)
 
 ---
 
@@ -48,11 +46,4 @@ The system retrieves the most relevant text chunks from the source and uses GPT-
    - Send both the question and retrieved chunks to GPT-4 through LangChain.  
    - Display the model’s answer and show the supporting document snippets.
 
----
 
-## 🧑‍💻 Running Locally
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
